@@ -44,15 +44,15 @@ const reducer = (state = initalState, action) => {
       };
     }
     case types.REMOVE_ITEM: {
-      const position = action.payload.value;
-      const selectedItem = state[position];
+      const id = action.payload.value;
+      const selectedItem = state[id];
       const newProduct = {
         ...selectedItem,
         count: selectedItem.count === 0 ? 0 : selectedItem.count - 1
       };
       return {
         ...state, 
-        id: newProduct
+        [id]: newProduct
       };
     }
     default: 
