@@ -13,6 +13,9 @@ class App extends Component {
        <CartButton />
        <SearchBar />
        <ProductList searchTerm={this.props.search} products={this.props.products} />
+       <div style={{display: this.props.cart === false ? 'none' : 'block'}}>
+         <h1>Cart List</h1>
+       </div>
      </div>
     );
   }
